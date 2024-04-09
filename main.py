@@ -44,7 +44,7 @@ users = conn.book.users.find({})
 borrows = conn.book.borrowings.find({})
 
 @app.get("/")
-async def read_item(request : Request):
+async def read_item():
     for doc in books:
         books_db.append(
             {'_id': doc['_id'], 'title': doc['title'], 'author': doc['author'], 'year': doc['year'], 'pages': doc['pages']}

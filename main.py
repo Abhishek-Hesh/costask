@@ -73,7 +73,7 @@ async def create_user(user: User):
     }
 
 @app.get("/users/")
-async def get_users(request : Request):
+async def get_users():
     docs = conn.book.users.find({})
     for doc in docs:
         users_db.append(
